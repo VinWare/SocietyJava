@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block headIncludes %}
+	<link rel="stylesheet" href="static/css/wing_setup_layout.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="container">
+		<h1 class="title-text">
+			Society Flats
+		</h1>
+		<br/>
+		<br/>
+		<h3 class="alert-warning" style="text-align: center;">
+			The changes made during these pages will be deemed as final.
+			<br/>Please enter the following forms carefully.
+		</h3>
+	</div>
+	<div class="container" style="max-width: 700px;">
+		<form method="post" action="#addWings">
+			{{ wingFlats.hidden_tag() }}
+			{{ wingFlats.wingId }}
+			{% for flat in wingFlats.flats %}
+			<hr/>
+			<h1 class="formHeading">{{ flat.label }}</h1>
+			{{ flat.hidden_tag() }}
+			{{ flat.flatNum.label }}
+			{{ flat.flatNum(class_="form-control") }}
+			{{ flat.flatFacing.label }}
+			{{ flat.flatFacing(class_="form-control") }}
+			{{ flat.area.label }}
+			{{ flat.area(class_="form-control") }}
+			{{ flat.BHK.label }}
+			{{ flat.BHK(class_="form-control") }}
+			{{ flat.floorNum.label }}
+			{{ flat.floorNum(class_="form-control") }}
+			{{ flat.price.label }}
+			{{ flat.price(class_="form-control") }}
+			{% endfor %}
+			<br/>
+			<br/>
+			<center>
+				{{ wingFlats.submitBtn(class_="btn btn-primary btn-block btn-lg") }}
+			</center>
+	</div>
+	<br/>
+	<br/>
+</div>
+
+{% endblock %}

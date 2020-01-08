@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block headIncludes %}
+	<link rel="stylesheet" href="static/css/society_setup_layout.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<h1 class="title-text">Society Hub</h1>
+			<h2 class="title-sub-text">Thank You for choosing us as the management service for your community.</h2>
+			<br/>
+			<br/>
+			<h3 class="alert-warning warning-text">
+			Please follow through the following setup pages carefully. The changes made during these pages will be deemed as final.
+			</h3>
+		</div>
+		<div class="col-md-6 ">
+			<div class="container img-container">
+				<img src="{{ url_for('static', filename='assets/images/background2.jpg') }}" />
+			</div>
+		</div>
+	</div>
+	<br/>
+	<br/>
+	<div class="container formDiv">
+		<h1 class="formHeading">Society Details</h1>
+		<br/>
+		<form method="post" action="#addSociety">
+			{{societyForm.hidden_tag()}}
+			<div class="form-group">
+				{{ societyForm.societyName.label}}
+				{{ societyForm.societyName(class_="form-control") }}
+			</div>
+            <div class="form-group">
+                {{ societyForm.adminName.label }}
+                {{ societyForm.adminName(class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ societyForm.adminPass.label }}
+                {{ societyForm.adminPass(class_="form-control") }}
+            </div>
+			<div class="form-group">
+				{{ societyForm.region.label}}
+				{{ societyForm.region(class_="form-control") }}
+			</div>
+			<div class="form-group">
+				{{ societyForm.city.label}}
+				{{ societyForm.city(class_="form-control") }}
+			</div>
+			<div class="form-group">
+				{{ societyForm.state.label}}
+				{{ societyForm.state(class_="form-control") }}
+			</div>
+			<div class="form-group">
+				{{ societyForm.area.label}}
+				{{ societyForm.area(class_="form-control") }}
+			</div>
+			<div class="form-group">
+				{{ societyForm.totalWings.label}}
+				{{ societyForm.totalWings(class_="form-control") }}
+			</div>
+            <div class="form-group">
+                <label for="file">Upload CSV File</label><br/>
+                <input type="file" name="file"/>
+            </div>
+			<center>
+				{{ societyForm.submitBtn(class_="btn btn-primary btn-block btn-lg") }}
+			</center>
+		</form>
+	</div>
+	<br/>
+	<br/>
+</div>
+
+{% endblock %}

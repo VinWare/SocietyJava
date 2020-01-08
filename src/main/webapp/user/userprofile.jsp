@@ -1,0 +1,97 @@
+{% extends "user/userpage.html" %}
+
+{% block userPageIncludes %}
+	<link rel="stylesheet" href="static/css/user_profile_layout.css">
+	<script src="static/js/userProfile.js"></script>
+
+	<!--Additional block for child static resources -->
+	{% block  userProfileIncludes %}{% endblock %}
+	
+{% endblock %}
+
+{% block userPageContent %}
+<div class="col-md-10">
+	<div class="container-fluid row" style="margin: auto;">
+		<div class="col-md-4 align-content-center">
+			<div class="imageContainer"  data-toggle="modal" data-target="#changeProfile" style="background: url({{ url_for('static', filename=imageUrl) }}) no-repeat center;">
+				<!-- <img src="{{ url_for('static', filename=imageUrl) }}" width="150" id="profileImg" alt=""/> -->
+				<div><center><h4>Change</h4></center></div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<h1 id="FlatOwnerName">{{ ownerName }}</h1>
+			<h2 id="FlatDetails">A-201 Sunshine Heights</h2>
+		</div>
+	</div>
+	<div class="container-fluid row" style="margin: auto;">
+		<div class="col-md-7">
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr class="table-primary">
+						<th>Resident Name</th>
+						<th>Contact Number</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for resident in resList %}
+					<tr>
+						<td>{{ resident['name'] }}</td>
+						<td>{{ resident['phone'] }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-5 jumbotron">
+			<a class="btn btn-danger btn-block" href="/bills">Amount Due : {{ pendingDues }}</a>
+			<button class="btn btn-warning btn-block" data-toggle="modal" data-target="#editDetailsModal" >Edit Details</button>
+			<a class="btn btn-primary btn-block">Documents</a>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="editDetailsModal">
+	<div class="modal-dialog">
+		<form name="/editDetails" action="editDetails" method="post">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Edit Resident Details</h4>
+					<a href="/"><button type="button" class="close" data-dismiss="modal">&times;</button></a>
+				</div>
+				{{ residentForm.hidden_tag() }}
+				<div class="modal-body">
+				{{ residentForm.name.label }}
+				{{ residentForm.name(class_="form-control") }}
+				{{ residentForm.contact.label }}
+				{{ residentForm.contact(class_="form-control") }}
+				</div>
+				<div class="modal-footer">
+					{{ residentForm.submitBtn(class_="btn btn-primary") }}
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="modal fade" id="changeProfile">
+	<div class="modal-dialog">
+		<form name="editProfileImage" action="/editProfileImage" method="post" enctype="multipart/form-data">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Edit Profile</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="profImage">Upload Photo</label><br/>
+						<input type="file" name="file" id="profImage"/>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}
