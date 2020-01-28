@@ -1,11 +1,11 @@
 <%@include file="../basehead.jsp" %>
-	<link rel="stylesheet" href="static/css/userpage_layout.css">
-	<link rel="stylesheet" href="static/css/user_dashboard_layout.css">
-			<script src="static/js/userDashboard.js"></script>
+	<link rel="stylesheet" href="/societyhub/static/css/userpage_layout.css">
+	<link rel="stylesheet" href="/societyhub/static/css/user_dashboard_layout.css">
+			<script src="/societyhub/static/js/userDashboard.js"></script>
  <%@include file="../basebody.jsp"%>
 <%@ include file="userpage.jsp" %>
-	<link rel="stylesheet" href="static/css/user_dashboard_layout.css">
-	<script src="static/js/userDashboard.js"></script>
+	<link rel="stylesheet" href="/societyhub/static/css/user_dashboard_layout.css">
+	<script src="/societyhub/static/js/userDashboard.js"></script>
 	
 <div class="col-md-4 table-div">
 	<div id="scrollDiv">

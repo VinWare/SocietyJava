@@ -12,8 +12,8 @@ public class BaseDAO {
 			if(connection==null || connection.isClosed()) {
 				Class.forName("com.mysql.jdbc.Driver");
 				String jdbcUrl = "jdbc:mysql://localhost:3306/society_mysqldb";
-				String jdbcUsername = "phpmyadmin";
-				String jdbcPassword = "phpmyadmin";
+				String jdbcUsername = "society";
+				String jdbcPassword = "SocietyPass1!";
 				connection = DriverManager.getConnection(jdbcUrl, jdbcUsername, jdbcPassword);
 				System.out.println("Connect");
 			}

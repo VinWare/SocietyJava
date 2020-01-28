@@ -7,8 +7,8 @@ org/vvar/societyhub/beans/User.class
 org/vvar/societyhub/dao/IssueDAO.class
 org/vvar/societyhub/servlet/LoginServlet.class
 org/vvar/societyhub/servlet/ProfileServlet.class
-org/vvar/societyhub/beans/Bill.class
 org/vvar/societyhub/dao/BillDAO.class
+org/vvar/societyhub/beans/Bill.class
 org/vvar/societyhub/dao/BaseDAO.class
 org/vvar/societyhub/servlet/IssueServlet.class
 org/vvar/societyhub/util/ToJson.class
