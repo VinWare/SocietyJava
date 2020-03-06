@@ -1,3 +1,4 @@
+/home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/dao/FlatDAO.java
 /home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/beans/Notice.java
 /home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/dao/BillDAO.java
 /home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/servlet/IssueServlet.java
@@ -7,6 +8,7 @@
 /home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/beans/User.java
 /home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/dao/UserDAO.java
 /home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/util/ToJson.java
+/home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/servlet/IndexServlet.java
 /home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/beans/Issue.java
 /home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/servlet/NoticeList.java
 /home/vineet/IdeaProjects/SocietyJava/src/main/java/org/vvar/societyhub/dao/BaseDAO.java

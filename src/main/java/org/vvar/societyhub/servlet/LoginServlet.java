@@ -29,8 +29,8 @@ public class LoginServlet extends HttpServlet {
 			httpSession.setAttribute("accName", user.getAccName());
 			httpSession.setAttribute("flatId", user.getFlatId());
 			httpSession.setAttribute("ownerName", user.getOwnerName());
-			resp.getWriter().print("OK");
-//			resp.sendRedirect("/home");
+//			resp.getWriter().print("OK");
+			resp.sendRedirect("dashboard");
 		}
 	}
 	

@@ -18,7 +18,7 @@ public class NoticeList extends HttpServlet {
 //		var soc = req.getSession().getAttribute("societyId");
 		var soc = (Object)1;
 		if(soc==null) {
-			resp.sendRedirect("/");
+			resp.sendRedirect("index");
 			return;
 		}
 		int societyId = Integer.parseInt(soc.toString());
