@@ -11,6 +11,7 @@ public class NoticeDAO  extends BaseDAO{
 	public List<Notice> getNoticeList(long societyId) {
 		connect();
 		String noticeQuery = "SELECT * FROM notices WHERE notices.society_id="+societyId;
+//		String noticeQuery = "SELECT * FROM notices";
 		List<Notice> ret = new ArrayList<>();
 		
 		

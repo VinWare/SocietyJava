@@ -15,12 +15,14 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		System.out.println(req.getHeader("Content-Type"));
 		if("/admin".equals(req.getPathInfo())) adminLogin(req, resp);
 		else userLogin(req, resp);
 	}
 	
 	private void userLogin(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String username = req.getParameter("username");
+		String username11 = req.getParameter("username");
 		String password = req.getParameter("password");
 		User user = new UserDAO().login(username,password);
 		if(user == null) resp.getWriter().print("N");//resp.sendRedirect("/?failedLogin=true");
