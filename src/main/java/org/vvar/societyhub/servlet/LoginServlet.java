@@ -3,7 +3,6 @@ package org.vvar.societyhub.servlet;
 import org.vvar.societyhub.beans.User;
 import org.vvar.societyhub.dao.UserDAO;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +20,7 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	private void userLogin(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		System.out.println(new String(req.getInputStream().readAllBytes()));
 		String username = req.getParameter("username");
 		String username11 = req.getParameter("username");
 		String password = req.getParameter("password");

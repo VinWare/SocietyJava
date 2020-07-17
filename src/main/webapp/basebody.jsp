@@ -1,14 +1,3 @@
-<%-- with errorMessages = get_flashed_messages() --%>
-<%-- if errorMessages --%>
-<!--
-<script type="text/javascript">
-			$(window).on("load",function(){
-				$('#loginError').modal('show');
-			});
-		</script>
-		-->
-<%-- endif --%>
-<%-- endwith --%>
 </head>
 
 <body>

@@ -12,11 +12,21 @@ public class PostFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest) servletRequest;
-        MyRequestWrapper requestWrapper = new MyRequestWrapper(request);
+        MultiReadHttpServletRequest multiReadRequest = new MultiReadHttpServletRequest((HttpServletRequest) servletRequest
+
+        );
+//        MyRequestWrapper requestWrapper = new MyRequestWrapper(request);
 //        LOG.debug("payload: " + requestWrapper.getBody());
-        System.out.println(requestWrapper.getBody());
-        System.out.println("Done");
-        filterChain.doFilter(servletRequest,servletResponse);
+        String output;
+        System.out.println(output = new String(multiReadRequest.getInputStream().readAllBytes()));
+        servletRequest.setAttribute("postdata", output);
+//        System.out.println(requestWrapper.getBody());
+//        System.out.println("Done");
+        filterChain.doFilter(multiReadRequest, servletResponse);
+    }
+
+    @Override
+    public void destroy() {
+
     }
 }

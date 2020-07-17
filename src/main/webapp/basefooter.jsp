@@ -7,9 +7,6 @@
 				</ul>
 			</div>
 		</footer>
-<%-- with errorMessages = get_flashed_messages() %-->
-<%-- if  --%>
-<!--
 <div class="modal fade" id="loginError" role="dialog">
 	<div class="modal-dialog">
 	<!-- Modal content-->
@@ -19,11 +16,9 @@
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
 			<div class="modal-body">
-				<%-- for(String error : errorMessages) {--%>
-				<!--
+				 for(String error : errorMessages) {
 				<p style="text-align: center;">{{ error }}</p>
-				-->
-				<%-- } --%>
+				 }
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -31,9 +26,6 @@
 		</div>
 	</div>
 </div>
--->
-<%-- endif --%>
-<%-- endwith --%>
 
 	</body>
 </html>

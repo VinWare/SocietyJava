@@ -1,15 +1,7 @@
-{% extends "user/userpage.html" %}
-
-{% block userPageIncludes %}
 	<link rel="stylesheet" href="static/css/user_profile_layout.css">
 	<script src="static/js/userProfile.js"></script>
 
 	<!--Additional block for child static resources -->
-	{% block  userProfileIncludes %}{% endblock %}
-	
-{% endblock %}
-
-{% block userPageContent %}
 <div class="col-md-10">
 	<div class="container-fluid row" style="margin: auto;">
 		<div class="col-md-4 align-content-center">
@@ -24,24 +16,6 @@
 		</div>
 	</div>
 	<div class="container-fluid row" style="margin: auto;">
-		<div class="col-md-7">
-			<table class="table table-hover table-bordered">
-				<thead>
-					<tr class="table-primary">
-						<th>Resident Name</th>
-						<th>Contact Number</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for resident in resList %}
-					<tr>
-						<td>{{ resident['name'] }}</td>
-						<td>{{ resident['phone'] }}</td>
-					</tr>
-					{% endfor %}
-				</tbody>
-			</table>
-		</div>
 		<div class="col-md-5 jumbotron">
 			<a class="btn btn-danger btn-block" href="/bills">Amount Due : {{ pendingDues }}</a>
 			<button class="btn btn-warning btn-block" data-toggle="modal" data-target="#editDetailsModal" >Edit Details</button>
